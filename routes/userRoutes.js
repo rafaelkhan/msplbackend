@@ -14,8 +14,8 @@ module.exports = function(db) {
             }
 
             if (result.length === 0) {
-                const insertNutzerQuery = 'INSERT INTO Nutzer (Vorname, Nachname, Schulklasse) VALUES (?, ?, ?)';
-                db.query(insertNutzerQuery, [firstName, lastName, 'LEER'], (err, result) => {
+                const insertNutzerQuery = 'INSERT INTO Nutzer (Vorname, Nachname) VALUES (?, ?)';
+                db.query(insertNutzerQuery, [firstName, lastName], (err, result) => {
                     if (err) {
                         console.error('Fehler beim Einfügen des Nutzers: ', err);
                         res.status(500).send('Interner Serverfehler');
