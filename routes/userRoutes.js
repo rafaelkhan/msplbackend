@@ -21,7 +21,6 @@ module.exports = function(db) {
                         res.status(500).send('Interner Serverfehler');
                         return;
                     }
-
                     const nutzerID = result.insertId;
                     const insertAccountQuery = 'INSERT INTO Account (Email, NutzerID, Zugabe, EntnahmeLimit) VALUES (?, ?, ?, ?)';
                     db.query(insertAccountQuery, [email, nutzerID, 0, 0], (err, result) => {
