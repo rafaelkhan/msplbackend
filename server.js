@@ -10,7 +10,7 @@ const LehrerMaterialRoutes = require('./routes/LehrerMaterialRoutes');
 const BoxandMaterialRoutes = require('./routes/BoxandMaterialRoutes');
 
 const app = express();
-const port = 3100;
+const port = process.env.PORT || 3100;
 
 const db = mysql.createConnection({
     host: 'mspl.cpg00wwyge82.eu-north-1.rds.amazonaws.com',
